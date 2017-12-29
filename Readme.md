@@ -368,11 +368,11 @@ Promises are also supported as a part of `evaluate()`.  If the return value of t
 ```js
 const selector = 'h1';
 nightmare
-  .evaluate((selector) => (
+  .evaluate((selector) => {
     new Promise((resolve, reject) => {
       setTimeout(() => resolve(document.querySelector(selector).innerText), 2000);
-    )}, selector)
-  )
+    })
+  }, selector)
   .then((text) => {
     // ...
   })
